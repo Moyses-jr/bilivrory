@@ -1,0 +1,18 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.codeActionsOnSave": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "editor.formatOnSave": true,
+  "cSpell.enableFiletypes": ["javascript"],
+  "cSpell.language": "en,pt,pt_BR"
+}

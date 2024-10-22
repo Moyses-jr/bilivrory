@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:3000
+### GET
+GET {{baseUrl}}/api/get/656fd9b1f298c7ed23e4d7c4
+
+### GET ALL
+GET {{baseUrl}}/api/getAll
+
+### POST
+POST {{baseUrl}}/api/post
+Content-Type: application/json
+
+{
+  "id": 6,
+  "title": "INSERIDO",
+  "description": "Tri massa",
+  "pageCount": 100,
+  "excerpt": "Não sei",
+  "publishDate": "2023-11-21"
+}
+
+### PUT
+PUT {{baseUrl}}/api/put/656fd9b1f298c7ed23e4d7c4
+Content-Type: application/json
+
+{
+  "id": 10,
+  "title": "Agora ta top",
+  "description": "Tri massa",
+  "pageCount": 100,
+  "excerpt": "Não sei",
+  "publishDate": "2023-11-21"
+}
+
+### DELETE
+DELETE {{baseUrl}}/api/delete/656fd9b1f298c7ed23e4d7c4
+
+
