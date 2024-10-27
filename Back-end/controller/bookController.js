@@ -4,12 +4,11 @@ const bookController = {
   create: async (req, res) => {
     try {
       const book = {
-        id: req.body.id,
         title: req.body.title,
+        autor: req.body.autor,
+        value: req.body.value,
         description: req.body.description,
-        pageCount: req.body.pageCount,
-        excerpt: req.body.excerpt,
-        publishDate: req.body.publishDate,
+        genero: req.body.genero,
       };
 
       const response = await Book.create(book);

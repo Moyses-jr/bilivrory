@@ -10,12 +10,11 @@ POST {{baseUrl}}/api/post
 Content-Type: application/json
 
 {
-  "id": 6,
-  "title": "INSERIDO",
-  "description": "Tri massa",
-  "pageCount": 100,
-  "excerpt": "Não sei",
-  "publishDate": "2023-11-21"
+    "title": "Teste",
+    "autor": "Moyses",
+    "value": 150,
+    "description": "Teste",
+    "genero": "romance"
 }
 
 ### PUT
