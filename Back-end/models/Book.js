@@ -4,29 +4,25 @@ const { Schema } = mongoose;
 
 const BookSchema = new Schema(
   {
-    id: {
-      type: Number,
-      required: true,
-    },
     title: {
       type: String,
+      required: true,
+    },
+    autor: {
+      type: String,
+      required: true,
+    },
+    value: {
+      type: Number,
       required: true,
     },
     description: {
       type: String,
       required: true,
     },
-    pageCount: {
-      type: Number,
-      required: true,
-    },
-    excerpt: {
+    genero: {
       type: String,
       required: true,
-    },
-    publishDate: {
-      type: Date,
-      default: Date.now,
     },
   },
   { timestamps: true }
