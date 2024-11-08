@@ -1,5 +1,5 @@
 import { FaRegEdit } from "react-icons/fa";
-import viteLogo from "/vite.svg";
+import booksLogo from "/books.png";
 import "./App.css";
 import { useState } from "react";
 import RegisterForm from "./registerForm";
@@ -19,12 +19,10 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
+      <div className="flex justify-center">
+          <img src={booksLogo} alt="Books logo" className="w-[122px] h-[80px]" />
       </div>
-      <h1>Vite + React</h1>
+      <h1 className="mb-2">Bilivrory</h1>
       <div>
         <button onClick={handlerShowModal}>
           <FaRegEdit />
