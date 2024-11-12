@@ -16,7 +16,11 @@ const saleController = {
 
   getAll: async (req, res) => {
     try {
-      const sales = await Sale.find();
+      const sales = await Sale.find().populate({
+        path: "customerId"
+      }).populate({
+        path: "booksId"
+      });
 
       if (!sales) {
         return res.status(401).json({ msg: `Não registro no banco` });
