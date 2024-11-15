@@ -9,12 +9,15 @@ interface registerFormProps {
   handlerShowModal: () => void;
 }
 
-const RegisterForm: React.FC<registerFormProps> = ({
+const BookRegisterForm: React.FC<registerFormProps> = ({
   isModalOpen,
   handlerShowModal,
 }) => {
-  // Função para realizar a requisição
-  async function createPost(data) {
+  const handlerModal = (resetForm) => {
+    resetForm();
+    handlerShowModal();
+  };
+  async function createPost(data, resetForm) {
     try {
       const response = await fetch("http://localhost:3000/api/post", {
         method: "POST",
@@ -30,6 +33,8 @@ const RegisterForm: React.FC<registerFormProps> = ({
 
       const result = await response.json();
       console.log("Sucesso:", result);
+      handlerShowModal();
+      resetForm();
     } catch (error) {
       console.error("Erro na requisição:", error);
     }
@@ -46,10 +51,10 @@ const RegisterForm: React.FC<registerFormProps> = ({
           genero: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => createPost(values)}
+        onSubmit={(values, { resetForm }) => createPost(values, resetForm)}
       >
-        {({ handleSubmit }) => (
-          <Modal show={isModalOpen} onClose={handlerShowModal}>
+        {({ handleSubmit, resetForm }) => (
+          <Modal show={isModalOpen} onClose={() => handlerModal(resetForm)}>
             <Form onSubmit={handleSubmit}>
               <Modal.Header>
                 <h2>Dados para cadastro</h2>
@@ -129,7 +134,10 @@ const RegisterForm: React.FC<registerFormProps> = ({
                 </div>
               </Modal.Content>
               <Modal.Footer>
-                <button className="button-cancel" onClick={handlerShowModal}>
+                <button
+                  className="button-cancel"
+                  onClick={() => handlerModal(resetForm)}
+                >
                   Cancelar
                 </button>
                 <button className="button-confirm" type="submit">
@@ -144,4 +152,4 @@ const RegisterForm: React.FC<registerFormProps> = ({
   );
 };
 
-export default RegisterForm;
+export default BookRegisterForm;

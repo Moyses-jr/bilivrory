@@ -1,8 +1,8 @@
-import { FaRegEdit, FaStore } from "react-icons/fa";
+import { FaBook, FaStore, FaUserEdit } from "react-icons/fa";
 import booksLogo from "/books.png";
 import "./App.css";
 import { useState } from "react";
-import RegisterForm from "./registerForm";
+import BookRegisterForm from "./registerForm";
 import CustomerRegisterForm from "./registerForm/CustomerRegisterFrom";
 import CreateSale from "./components/CreateSale";
 
@@ -26,30 +26,36 @@ function App() {
   return (
     <>
       <div className="flex justify-center">
-          <img src={booksLogo} alt="Books logo" className="w-[122px] h-[80px]" />
+        <img src={booksLogo} alt="Books logo" className="w-[122px] h-[80px]" />
       </div>
       <h1 className="mb-2">Bilivrory</h1>
       <div className="flex flex-row">
-        <button onClick={handlerShowModal}>
-          <FaRegEdit />
+        <button onClick={handlerShowModal} className="flex items-center gap-2">
+          <FaBook />
+          <div>Editar Livro</div>
         </button>
 
-        <button onClick={handlerShowCustomerModal} style={{ marginLeft: "10px" }}>
-          Cadastro do Cliente
+        <button
+          onClick={handlerShowCustomerModal}
+          className="flex items-center gap-2 ml-10"
+        >
+          <FaUserEdit />
+          <div>Cadastro do Cliente</div>
         </button>
-        
-        <button onClick={handlerShowSaleModal} style={{ marginLeft: "10px" }} className="flex items-center gap-2">
+
+        <button
+          onClick={handlerShowSaleModal}
+          className="flex items-center gap-2 ml-10"
+        >
           <FaStore />
-          <div>
-            Cadastro de Venda
-          </div>
+          <div>Cadastro de Venda</div>
         </button>
-        
-        <RegisterForm
+
+        <BookRegisterForm
           isModalOpen={isModalOpen}
           handlerShowModal={handlerShowModal}
         />
-        
+
         <CustomerRegisterForm
           isModalOpen={isCustomerModalOpen}
           handlerShowModal={handlerShowCustomerModal}
