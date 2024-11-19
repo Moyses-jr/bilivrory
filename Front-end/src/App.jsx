@@ -1,4 +1,4 @@
-import { FaBook, FaStore, FaUserEdit } from "react-icons/fa";
+import { FaBook, FaStore, FaUserEdit, FaRegListAlt } from "react-icons/fa";
 import booksLogo from "/books.png";
 import "./App.css";
 import { useState } from "react";
@@ -24,7 +24,7 @@ function App() {
   const handlerShowSaleModal = () => {
     setIsSaleModalOpen(!isSaleModalOpen);
   };
-  
+
   const handlerShowGetSaleModal = () => {
     setIsGetSaleModalOpen(!isGetSaleModalOpen);
   };
@@ -56,12 +56,12 @@ function App() {
           <FaStore />
           <div>Cadastro de Venda</div>
         </button>
-        
+
         <button
           onClick={handlerShowGetSaleModal}
           className="flex items-center gap-2 ml-10"
         >
-          <FaStore />
+          <FaRegListAlt />
           <div>Mostrar Vendas</div>
         </button>
 
@@ -79,7 +79,7 @@ function App() {
           isModalOpen={isSaleModalOpen}
           handlerShowModal={handlerShowSaleModal}
         />
-        
+
         <GetSales
           isModalOpen={isGetSaleModalOpen}
           handlerShowModal={handlerShowGetSaleModal}
